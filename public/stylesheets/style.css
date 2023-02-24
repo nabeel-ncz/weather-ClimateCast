@@ -1,0 +1,341 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  background-color: #fff;
+  background: #ffffff;
+  font-family: 'Roboto', sans-serif;
+}
+/* 
+---------------------------------------------
+Banner Style
+--------------------------------------------- 
+*/
+
+.main-banner {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  padding: 250px 120px 150px 120px;
+  position: relative;
+  overflow: hidden;
+}
+
+.main-banner:after {
+  content: '';
+  background-image: url(../images/slider-left-dec.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.main-banner .left-content {
+  margin-right: 15px;
+}
+
+.main-banner .left-content h2 {
+  z-index: 2;
+  position: relative;
+  font-weight: 700;
+  line-height: 70px;
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.main-banner .left-content p {
+  margin-bottom: 45px;
+  color: #2a2a2a;
+  font-weight: 400;
+  position: relative;
+  z-index:2;
+}
+
+.main-banner .left-content .first-button {
+  margin-right: 15px;
+}
+
+.main-banner .left-content .white-button {
+  display: inline-block;
+}
+
+.main-banner .right-image {
+  text-align: center;
+  position: relative;
+  z-index: 20;
+}
+
+.main-banner .right-image img {
+  max-width: 710px;
+}
+
+.main-banner .left-content .white-button a {
+  background-color: #4b8ef1;
+  color: #fff !important;
+}
+
+/* 
+---------------------------------------------
+Services Style
+--------------------------------------------- 
+*/
+
+.services {
+  padding-top: 50px;
+  position: relative;
+}
+
+.services  .section-heading p {
+  margin-top: 10px;
+  margin-left: 18%;
+  margin-right: 18%;
+}
+
+.services .container-fluid {
+  padding-left: 65px;
+  padding-right: 65px;
+}
+/*
+.services:after {
+  content: '';
+  background-image: url(../images/services-left-dec.png);
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0;
+  bottom: -300px;
+  width: 261px;
+  height: 368px;
+  z-index: 0;
+}
+
+.services:before {
+  content: '';
+  background-image: url(../images/services-right-dec.png);
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 1136px;
+  height: 244px;
+  z-index: 0;
+}*/
+
+.services .section-heading {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.services .section-heading .line-dec {
+  margin: 0 auto;
+}
+
+.weather-item {
+  position: relative;
+  z-index: 1;
+  padding: 6px 16px;
+  box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+  background-color: #fff;
+  border-radius: 10px;
+  border-top-left-radius: 50px;
+  transition: all .3s;
+}
+
+.weather-item .icon {
+  margin-left: 0px;
+  margin-bottom: 30px;
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 50px;
+  transition: all .3s;
+}
+
+.weather-item h4 {
+  transition: all .3s;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.weather-item p {
+  transition: all .3s;
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.weather-item:hover h4,
+.weather-item:hover p,
+.weather-item:hover .text-button a {
+  color: #fff;
+}
+
+
+.weather-item:hover {
+  background-image: url(../images/service-bg.jpg);
+  background-position: right top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+
+.today-weather-details {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 60px;
+}
+.today-weather-details .first-col{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.today-weather-details .content-box-1{
+  margin-bottom: 20px;
+}
+.today-weather-details .second-col{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.today-weather-details .third-col{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.today-weather-details .fourth-col{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* 
+---------------------------------------------
+responsive
+--------------------------------------------- 
+*/
+
+@media (max-width: 1200px) {
+  
+  .main-banner .left-content h2 {
+    z-index: 2;
+    position: relative;
+    font-weight: 700;
+    line-height: 70px;
+    font-size: 50px;
+    margin-bottom: 20px;
+  }
+
+  .main-banner .left-content p {
+    margin-bottom: 45px;
+  }
+}
+
+@media (max-width: 992px) {
+  .main-banner:after {
+    display: none;
+  } 
+  .main-banner .left-content h2 {
+    color: #2a2a2a;
+    margin-right: 0;
+  }
+  .main-banner .left-content p {
+    color: #afafaf;
+    margin-right: 0;
+  }
+  .main-banner .left-content .white-button a {
+    background-color: #4b8ef1;
+    color: #fff !important;
+  }
+  .main-banner .left-content {
+    margin-right: 0px;
+  }
+  .main-banner {
+    text-align: center;
+    padding: 30px 0px 30px 0px;
+  }
+  .main-banner:before {
+    display: none;
+  }
+  .main-banner .right-image {
+    margin: 30px auto 0px auto;
+    text-align: center;
+  }
+  .services{
+    padding-top: 10px;
+  }
+  .services .naccs .menu div {
+    font-size: 15px;
+    font-weight: 500;
+  }
+  .weather-item {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .weather-item .icon {
+    margin: 0 auto 30px auto;
+  }
+}
+
+@media (max-width: 767px) {
+  
+  .main-banner .info-stat {
+    margin-bottom: 15px;
+  }
+  .main-banner .left-content h2{
+    font-size: 26px;
+    line-height: 38px;
+  }
+  .weather-item {
+    text-align: center;
+    padding: 30px;
+  }
+  .main-banner img{
+    width: 440px;
+  }
+  .weather-item .icon {
+    float: none;
+    margin-right: 0px;
+    margin-bottom: 15px;
+  }
+  .weather-item .right-content {
+    display: inline-block;
+  }
+  .services .naccs .menu div .thumb {
+    padding: 5px;
+  }
+  .services .icon img {
+    margin: 0px;
+  }
+  
+  .services ul.nacc li.active {
+    padding: 45px;
+  }
+  .services .naccs .menu div  {
+    font-size: 0px;
+  }
+  
+  .services ul.nacc li .right-image img {
+    float: none;
+  }
+  
+}
+@media (max-width: 667px){
+  .main-banner img{
+    width: 340px;
+  }
+}
