@@ -52,19 +52,19 @@
           <div class="main-weather-form">
             <form id="weather-search-form" action="" method="post" enctype="multipart/form-data">
               <label for="city-form">City : </label>
-              <input type="text" name="city" id="city-form" value="Kozhikode">
+              <input type="text" name="city" id="city-form" value="Kozhikode" style="height: 40px;">
 
               <label for="select-form">select : </label>
-              <select name="dayOrWeek" id="select-form">
+              <select name="dayOrWeek" id="select-form" style="height: 40px;">
                 <option value="daily">daily</option>
                 <option value="weekly">weekly</option>
               </select>
               <label for="temp-form"></label>
-              <select name="tempUnit" id="temp-form">
+              <select name="tempUnit" id="temp-form" style="height: 40px;">
                 <option value="c">Celcius</option>
                 <option value="f">Faranheit</option>
               </select>
-              <button type="submit" class="btn btn-primary" style="padding: 1px 8px !important;">search</button>
+              <button type="submit" class="btn btn-primary" style="height: 40px; width: auto; padding: 0px 8px;"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
             </form>
           </div>
 
@@ -79,73 +79,111 @@
         <h4>Today's highligts</h4>
       </div>
     </div>
-    
+
     <div class="today-weather-details row gx-3">
-      
-        <div class="col-lg-3 first-col">
-          <div class="content">
-            <div class="icon"><i class="bi bi-cloud-sun-fill"></i></div>
-            <h3><span id="today-temp-value">34</span> &#176;c</h3>
-            <h6 id="today-date-and-time">sunday ,12:00</h6>
-            <span id="current-city">City</span><br>
-            <span id="today-condition-status">Clear sky</span>
+
+      <div class="col-lg-3 col-md-12 first-col">
+        <div class="content">
+          <div class="icon"><img src="/images/sunny.png" alt="" class="w-card-main-img"></div>
+          <div class="text">
+            <h3><span id="today-temp-value">34</span><span id="today-temp-unit">&#176;c</span> </h3>
+            <span id="today-condition-status">Partially cloudy</span><br>
+          <h6 id="today-date-and-time">sunday ,12:00</h6>
+          <span id="current-city">Kozhikode, KL, India</span>
           </div>
+          
+
         </div>
-        <div class="col-lg-3 second-col">
-          <div class="content-box-1">
-            <h6>Uv index</h6>
-            <h3 class="uvindex-value">34 &#176; c</h3>
+      </div>
+      <div class="col-lg-3 col-md-4 second-col">
+        <div class="row">
+          <div class="content-box-1  col-6 col-md-12">
+            <div class="text">
+              <h6>Uv index</h6>
+            <h3 class="uvindex-value">5.3</h3>
             <span class="uvindex-status">low</span>
+            </div>
+            <div class="icon">
+              <i class='bx bxs-radiation'></i>
+            </div>
+            
           </div>
-          <div class="content-box-2">
-            <h6>Humidity</h6>
-            <h3 class="humidity-value">34 &#176; c</h3>
-            <span class="humidity-status">low</span>
+          <div class="content-box-2  col-6 col-md-12">
+            <div class="text">
+              <h6>Humidity</h6>
+            <h3 class="humidity-value">69.5</h3>
+            <span class="humidity-status">High</span>
+            </div>
+            <div class="icon">
+              <i class='bx bxs-droplet-half'></i>
+            </div>
           </div>
         </div>
-        <div class="col-lg-3 third-col">
-          <div class="content-box-1">
-            <h6>Wind status</h6>
-            <h3 class="wind-value">34 &#176; c</h3>
+
+      </div>
+      <div class="col-lg-3 col-md-4 third-col">
+        <div class="row">
+          <div class="content-box-1  col-6 col-md-12">
+            <div class="text">
+              <h6>Wind status</h6>
+            <h3 class="wind-value">0.7</h3>
             <span class="wind-status">low</span>
+            </div>
+            <div class="icon">
+              <i class='bx bx-wind'></i>
+            </div>
           </div>
-          <div class="content-box-2">
-            <h6>Visibility</h6>
-            <h3 class="visibility-value">34 &#176; c</h3>
-            <span class="visibility-status">low</span>
+          <div class="content-box-2  col-6 col-md-12">
+            <div class="text">
+              <h6>Visibility</h6>
+            <h3 class="visibility-value">6</h3>
+            <span class="visibility-status">clear air</span>
+            </div>
+            <div class="icon">
+              <i class='bx bx-low-vision' ></i>
+            </div>
           </div>
         </div>
-        <div class="col-lg-3 fourth-col">
-          <div class="content-box-1">
-            <h6>Sunrise</h6>
-            <h3 class="sunrise-value">34 &#176; c</h3>
+
+      </div>
+      <div class="col-lg-3 col-md-4 fourth-col">
+        <div class="row">
+          <div class="content-box-1  col-6 col-md-12">
+            <div class="text">
+              <h6>Sunrise</h6>
+            <h3 class="sunrise-value">06:40</h3>
             <span class="sunrise-status">low</span>
+            </div>
+            <div class="icon">
+              <i class='bx bx-sun' ></i>
+            </div>
           </div>
-          <div class="content-box-2">
-            <h6>Airquality</h6>
-            <h3 class="air-quality-value">34 &#176; c</h3>
-            <span class="air-quality-status">low</span>
+          <div class="content-box-2  col-6 col-md-12">
+            <div class="text">
+              <h6>Airquality</h6>
+            <h3 class="air-quality-value">0.2</h3>
+            <span class="air-quality-status">good</span>
+            </div>
+            <div class="icon">
+              <i class='bx bxl-tailwind-css'></i>
+            </div>
           </div>
         </div>
-     
+
+      </div>
+
     </div>
   </div>
 
 
   <div class="container">
-    <div class="row" id="weather-card-row">
-      <!--
-      <div class="col-6 col-md-3 col-lg-2">
-
-        <div class="weather-item">
-          <div class="icon"></div>
-          <h4 class="weather-item-heading">Day1</h4>
-          <p>sample data <br>and one more <br>lets out</p>
-        </div>
-
+    <div class="row mt-2 mb-5">
+      <div class="col-lg-12 d-flex justify-content-center">
+        <h4 id="forecast-heading">Hourly Forecast</h4>
       </div>
-      -->
-
+    </div>
+    <div class="row" id="weather-card-row">
+      
     </div>
   </div>
 

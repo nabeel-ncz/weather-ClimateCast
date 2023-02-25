@@ -19,6 +19,11 @@ let wind_status=document.querySelector('.wind-status')
 let humidity_status=document.querySelector('.humidity-status')
 let uvindex_status=document.querySelector('.uvindex-status')
 
+let w_card_main_icon=document.getElementsByClassName("w-card-main-img")
+let forecast_heading=document.getElementById("forecast-heading")
+let today_temp_unit=document.getElementById("today-temp-unit")
+
+
 function getDatetime() {
     let current = new Date()
     let c_hour = current.getHours()
@@ -107,7 +112,29 @@ function setairqualityStatus(value){
         air_quality_status.innerText='hazardous'
     }
 }
-
+function changeTimeFormat(time){
+    let hour=time.split(":")[0];
+    let min=time.split(":")[1];
+    let newTime=hour+':'+min
+    return newTime;
+}
+function setIconForCard(condition){
+    if(condition == 'partly-cloudy-day'){
+        return "/images/partly-cloudy.png";
+    }else if(condition == 'rain'){
+        return "/images/cloudy-with-shower(d).png";
+    }else if(condition == 'clear-day'){
+        return "/images/sunny.png";
+    }else if(condition == 'cloudy'){
+        return "/images/overcast.png";
+    }else if(condition == 'partly-cloudy-night'){
+        return "/images/partly-cloud-night.png";
+    }else if(condition == 'clear-night'){
+        return "/images/partly-cloud-night.png";
+    }else{
+        return "/images/sunny.png";
+    }
+}
 //function to get public ip with fetch--
 function getCurrentLocation(){
     const loc_api='https://geolocation-db.com/json/'
@@ -132,12 +159,14 @@ function getweatherdata(city, unit, hourlyOrWeek) {
         let leng=data.days.length;
         let today=data.currentConditions
 
-        current_city.innerText = data.address;
+        current_city.innerText = data.resolvedAddress;
 
         if(unit=='c'){
             today_temp.innerText = data.days[0].temp
+            today_temp_unit.innerText = "°c"
         }else{
             today_temp.innerText = celciustToFaranheit(data.days[0].temp)
+            today_temp_unit.innerText = "°f"
         }
         today_condition_status.innerText = data.days[0].conditions
 
@@ -145,19 +174,22 @@ function getweatherdata(city, unit, hourlyOrWeek) {
         humidity_value.innerText= today.humidity
         wind_value.innerText= today.windspeed
         visibility_vallue.innerText= today.visibility
-        sunrise_value.innerText= today.sunrise
+        sunrise_value.innerText= changeTimeFormat(today.sunrise)
         air_quality_value.innerText= today.winddir
 
         setUvindexStatus(today.uvindex)
         setHumidityStatus(today.humidity)
-        //setWindStatus(today.windspeed)
+        
         setVisibilityStatus(today.visibility)
         setairqualityStatus(today.winddir)
+        w_card_main_icon.src=setIconForCard(today.icon)
 
         if(hourlyOrWeek=="daily"){
             updateForecast(data.days[0].hours,unit,"day")
+            forecast_heading.innerText="Hourly forecast"
         }else{
             updateForecast(data.days,unit,"week")
+            forecast_heading.innerText="Weekly forecast"
         }
         console.log(data);
     })
@@ -192,6 +224,13 @@ function getHour(time){
         return newTime;
     }
 }
+function setTemperatureUnit(unit){
+    if(unit == 'c'){
+        return "°c"
+    }else{
+        return "°f"
+    }
+}
 //forecast update with hourly and weekly
 function updateForecast(data,unit,type){
     weatherCards.innerHTML=''
@@ -204,7 +243,7 @@ function updateForecast(data,unit,type){
     }
     for(let i=0;i<numOfCards;i++){
         let w_card=document.createElement("div")
-        w_card.classList.add("col-lg-2")
+        w_card.classList.add("col-lg-2","col-md-3","col-sm-4","col-6")
 
         let dayName=getHour(data[day].datetime)
         if(type=='week'){
@@ -215,7 +254,12 @@ function updateForecast(data,unit,type){
         if(unit=='f'){
             dayTemp=celciustToFaranheit(data[day].temp)
         }
-        w_card.innerHTML='<div class="weather-item"><div class="icon"></div><h4 class="weather-item-heading">'+dayName+'</h4><p>'+dayTemp+'<br>and one more</p></div>'
+        let iconStatus=data[day].icon
+        let iconSrc=setIconForCard(iconStatus)
+
+        let unitIcon=setTemperatureUnit(unit)
+
+        w_card.innerHTML='<div class="weather-item"><div class="icon"><img src="'+iconSrc+'" class="w-card-img"></div><p>'+dayName+'</p><h4 class="weather-item-heading">'+dayTemp+unitIcon+'</h4><span>Partially cloudy</span></div>'
         weatherCards.appendChild(w_card);
         day++;
     }
