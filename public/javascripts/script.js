@@ -24,6 +24,17 @@ let forecast_heading=document.getElementById("forecast-heading")
 let today_temp_unit=document.getElementById("today-temp-unit")
 
 
+
+      window.addEventListener('scroll',(e)=>{
+        const nav = document.querySelector('.navbar-custom');
+        if(window.pageYOffset>0){
+          nav.classList.add("add-shadow");
+        }else{
+          nav.classList.remove("add-shadow");
+        }
+      });
+    
+
 function getDatetime() {
     let current = new Date()
     let c_hour = current.getHours()

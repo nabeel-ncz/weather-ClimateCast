@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Poppins:wght@300;400;500&family=Roboto+Condensed&family=Roboto+Flex:opsz,wght@8..144,500&family=Roboto:wght@900&family=Tilt+Warp&display=swap');
 *{
   margin: 0;
   padding: 0;
@@ -7,17 +8,44 @@ body {
   margin: 0;
   padding: 0;
   border: 0;
-  font-family: 'Roboto', sans-serif;
   font-weight: 400;
   background-color: #fff;
   background: #ffffff;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 /* 
 ---------------------------------------------
 Banner Style
 --------------------------------------------- 
 */
+.navbar-custom{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+}
+.navbar-custom a{
+  font-family: 'Tilt Warp', cursive;
+
+}
+.navbar-custom .btn-1{
+  font-family: 'Poppins', sans-serif;
+  padding: 6px 12px;
+  background-color: white;
+  color: black;
+  font-weight: 500;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 12px;
+  margin-right: 10px;
+  box-shadow:  0px 0px 4px 1px rgba(47, 110, 235, 0.215);
+}
+.navbar-custom a span{
+  color: #2f6deb;
+}
+.add-shadow{
+  box-shadow: 0px 10px 33px -13px rgba(0,0,0,0.75);
+}
 
 .main-banner {
   background-repeat: no-repeat;
@@ -109,7 +137,11 @@ Services Style
   text-align: center;
   margin-bottom: 80px;
 }
-.services .section-heading em{
+.services .section-heading h4{
+  font-family: 'Tilt Warp', cursive;
+}
+.services .section-heading span{
+  font-family: 'Tilt Warp', cursive;
   color: #4b8ef1;
 }
 .services .section-heading .line-dec {
@@ -183,23 +215,29 @@ Services Style
 
 .weather-item p {
   transition: all .3s;
+  font-weight: 500;
   font-size: 15px;
   margin-bottom: 5px;
 }
-
+.weather-item span{
+  font-size: 15px;
+  font-weight: 500;
+}
 .weather-item:hover h4,
-.weather-item:hover p,
-.weather-item:hover .text-button a {
-  color: #fff;
+.weather-item:hover p{
+  color: #2f6deb;
+}
+.weather-item:hover .weather-item span {
+  color: #2f6deb;
+}
+.todays-heading,#forecast-heading{
+  font-weight: 500;
+  font-family: 'Tilt Warp', cursive;
+}
+.todays-heading span,#forecast-heading span{
+  color: #4b8ef1;
 }
 
-
-.weather-item:hover {
-  background-image: url(../images/service-bg.jpg);
-  background-position: right top;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 #weather-search-form{
   display: flex;
   flex-direction: row;
@@ -207,10 +245,20 @@ Services Style
   justify-content: center;
 }
 #weather-search-form input{
+  padding-left: 10px;
+  border-color: #4b8ef1;
   margin: 0px 8px;
 }
+#weather-search-form label{
+  font-weight: 500;
+  color: #000000;
+}
 #weather-search-form select{
+  border-color: #4b8ef1;
   margin: 0px 8px;
+}
+#weather-search-form button{
+  background-color: #4b8ef1;
 }
 
 .today-weather-details {
@@ -221,20 +269,14 @@ Services Style
 }
 .today-weather-details .content{
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   border: 1px solid #3333;
   border-radius: 18px;
-  padding: 0px 40px;
-  margin-bottom: 20px;
+  padding: 25px 40px;
 }
-@media (min-width: 992px){
-  .today-weather-details .content{
-    flex-direction: column;
-    padding: 24px 26px;
-    margin-bottom: 0px;
-  }
-}
+
 .today-weather-details img{
   width: 140px;
   height: auto;
@@ -274,6 +316,15 @@ Services Style
 }
 .today-weather-details .fourth-col .row{
   width: 100%;
+}
+footer{
+  background: white;
+  margin-top: 60px;
+  border-top: 1px solid #0000004e;
+}
+footer a{
+  text-decoration: none;
+  color: #2f6deb;
 }
 /* 
 ---------------------------------------------
@@ -341,6 +392,11 @@ responsive
   .weather-item .icon {
     margin: 0 auto 30px auto;
   }
+  .today-weather-details .first-col .content{
+    flex-direction: row;
+    padding: 24px 26px;
+    margin-bottom: 0px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -353,16 +409,28 @@ responsive
     line-height: 38px;
   }
   .weather-item {
-    text-align: center;
-    padding: 30px;
+    padding: 8px 4px;
+  }
+  .weather-item .icon {
+    margin: 0 auto 4px auto;
+  }
+  .weather-item .w-card-img{
+    width: 50px;
+  }
+  .weather-item span {
+    font-size: 11px;
+  }
+  .weather-item p {
+    font-size: 12px;
+  }
+  .weather-item h4{
+    margin-bottom: 0px;
+  }
+  #weather-card-row{
+    padding: 0px 24px;
   }
   .main-banner img{
     width: 440px;
-  }
-  .weather-item .icon {
-    float: none;
-    margin-right: 0px;
-    margin-bottom: 15px;
   }
   .weather-item .right-content {
     display: inline-block;
@@ -373,7 +441,12 @@ responsive
   .services .icon img {
     margin: 0px;
   }
-  
+  .today-weather-details .first-col,
+  .today-weather-details .second-col,
+  .today-weather-details .third-col,
+  .today-weather-details .fourth-col{
+    padding: 0px 20px;
+  }
   .services ul.nacc li.active {
     padding: 45px;
   }
@@ -384,7 +457,20 @@ responsive
   .services ul.nacc li .right-image img {
     float: none;
   }
-  
+  #weather-search-form{
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0px 30px;
+  }
+  #weather-search-form div{
+    margin-bottom: 8px;
+  }
+  #weather-search-form input,#weather-search-form select,#weather-search-form button{
+    width: 100%;
+  }
+  #weather-search-form input,#weather-search-form select,#weather-search-form button{
+    margin: 0px 0px;
+  }
 }
 @media (max-width: 667px){
   .main-banner img{

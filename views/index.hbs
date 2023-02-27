@@ -1,8 +1,9 @@
-<nav class="navbar sticky-top bg-body-tertiary" style="background: transparent;">
+<header class="navbar sticky-top navbar-custom">
   <div class="container-fluid">
-    <a class="navbar-brand ms-5 " href="#">ClimateCast</a>
+    <a class="navbar-brand ms-2 " href="#"><span>C</span>limate<span>C</span>ast</a>
+    <a href="#services" class="btn-1">Check <span>weather</span> today </a>
   </div>
-</nav>
+</header>
 
 <div class="main-banner">
   <div class="container">
@@ -19,17 +20,13 @@
                     Plan your day with confidence using our accurate and customizable weather forecasts.
                   </p>
                 </div>
-                <div class="col-lg-12">
-                  <div class="white-button">
-                    <a href="#">Check weather <i class="fab fa-apple"></i></a>
-                  </div>
-                </div>
+                
               </div>
             </div>
           </div>
           <div class="col-lg-6">
             <div class="right-image">
-              <img src="/images/slider-dec.png" alt="">
+              <img src="/images/Selected photo.png" alt="">
             </div>
           </div>
         </div>
@@ -43,7 +40,7 @@
     <div class="row">
       <div class="col-lg-8 offset-lg-2">
         <div class="section-heading ">
-          <h4>Amazing <em>Services &amp; Features</em> for you</h4>
+          <h4>Amazing <span>Services &amp; Features</span> for you</h4>
           <img src="/images/heading-line-dec.png" alt="">
           <p>Get up-to-date weather information for your location and beyond with ClimateCast.
             Plan your day with confidence using our accurate and customizable weather forecasts.
@@ -51,19 +48,27 @@
 
           <div class="main-weather-form">
             <form id="weather-search-form" action="" method="post" enctype="multipart/form-data">
+            <div>
               <label for="city-form">City : </label>
               <input type="text" name="city" id="city-form" value="Kozhikode" style="height: 40px;">
-
-              <label for="select-form">select : </label>
+            </div>
+              
+              <div>
+                <label for="select-form">select : </label>
               <select name="dayOrWeek" id="select-form" style="height: 40px;">
                 <option value="daily">daily</option>
                 <option value="weekly">weekly</option>
               </select>
-              <label for="temp-form"></label>
+              </div>
+
+              <div>
+                <label for="temp-form">Unit</label>
               <select name="tempUnit" id="temp-form" style="height: 40px;">
                 <option value="c">Celcius</option>
                 <option value="f">Faranheit</option>
               </select>
+              </div>
+              
               <button type="submit" class="btn btn-primary" style="height: 40px; width: auto; padding: 0px 8px;"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
             </form>
           </div>
@@ -76,11 +81,11 @@
   <div class="container">
     <div class="row mt-2 mb-5">
       <div class="col-lg-12 d-flex justify-content-center">
-        <h4>Today's highligts</h4>
+        <h4 class="todays-heading"><span>T</span>oday's <span>h</span>ighligts</h4>
       </div>
     </div>
 
-    <div class="today-weather-details row gx-3">
+    <div class="today-weather-details row gx-0">
 
       <div class="col-lg-3 col-md-12 first-col">
         <div class="content">
@@ -176,10 +181,10 @@
   </div>
 
 
-  <div class="container">
+  <div class="container dayorweekContainer">
     <div class="row mt-2 mb-5">
       <div class="col-lg-12 d-flex justify-content-center">
-        <h4 id="forecast-heading">Hourly Forecast</h4>
+        <h4 id="forecast-heading"><span>H</span>ourly <span>F</span>orecast</h4>
       </div>
     </div>
     <div class="row" id="weather-card-row">
@@ -194,13 +199,11 @@
 
 
 
-<footer class="text-center text-lg-start bg-white mt-4" style="background: white;">
-  <!-- Copyright -->
+<footer class="text-center text-lg-start bg-white">
   <div class="text-center p-3" style="background-color: rgb(255, 255, 255);">
     © 2020 Copyright:
-    <a class="text-dark" href="https://mdbootstrap.com/">Climatecast.com</a>
+    <a href="https://mdbootstrap.com/">Climatecast.com</a>
   </div>
-  <!-- Copyright -->
 </footer>
 
 
